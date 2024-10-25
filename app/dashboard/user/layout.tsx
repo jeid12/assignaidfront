@@ -1,19 +1,28 @@
-// /app/dashboard/user-dashboard/layout.tsx
+// /app/dashboard/user/layout.tsx
 
 import React from 'react';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 
-const UserDashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+import UserDashboard from './components/UserDashboard';
+
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="dashboard-container">
-      <Header />
-      <div className="dashboard-content">
-        <Sidebar />
-        <main>{children}</main>
-      </div>
+    <div className="dashboard-layout">
+      {/* Optional Header */}
+      <header className="dashboard-header">
+        <h1>Welcome to Your Dashboard</h1>
+      </header>
+
+      <main className="dashboard-main">
+        <UserDashboard />
+        {/* {children} Render child components if needed */}
+      </main>
+
+      {/* Optional Footer */}
+      <footer className="dashboard-footer">
+        <p>&copy; 2024 AssignAid</p>
+      </footer>
     </div>
   );
 };
 
-export default UserDashboardLayout;
+export default Layout;

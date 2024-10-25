@@ -11,8 +11,8 @@ const AssignmentList: React.FC<{ assignments: any[] }> = ({ assignments }) => {
       ) : (
         <ul>
           {assignments.map((assignment) => (
-            <li key={assignment.id}>
-              <h3>{assignment.content}</h3>
+            <li key={assignment.title}>
+              <h3>{assignment.description}</h3>
               {/* Add buttons for editing and deleting assignments */}
             </li>
           ))}
